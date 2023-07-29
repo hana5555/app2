@@ -1,0 +1,4 @@
+$("#comments_index").html("<%= j(render 'book_comments/book_comments', book: @book) %>");
+
+<!--フォームを送信したあとにフォームの値を空にする-->
+$("textarea").val('');
