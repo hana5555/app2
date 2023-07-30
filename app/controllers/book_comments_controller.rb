@@ -1,11 +1,11 @@
 class BookCommentsController < ApplicationController
   def create
     @book = Book.find(params[:book_id])
-    @user = @book.user
     comment = BookComment.new(book_comment_params)
     comment.user_id = current_user.id
     comment.book_id = @book.id
     comment.save
+    @user = @book.user
     #redirect_to request.referer
     render :comments
   end
