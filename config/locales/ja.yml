@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザ
       book: 投稿
+      book_comment: コメント
     attributes:
       user:
         name: 名前
@@ -12,3 +13,5 @@ ja:
       book:
         title: タイトル
         body: 内容
+      book_comment:
+        comment: コメント

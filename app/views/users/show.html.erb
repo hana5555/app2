@@ -5,6 +5,22 @@
         <%= render "users/user_info", user: @user %>
       </div>
       <div class="row">
+        <% unless @user.id == current_user.id %>
+          <% if (current_user.following? @user) && (@user.following? current_user) %>
+          <% if @isRoom == true %>
+            <p class="user-show-room"><a href="/rooms/<%= @roomId %>" class="btn btn-primary btn-lg">DMを送る</a></p>
+          <% else %>
+            <%= form_for @room do |f| %>
+              <%= fields_for @entry do |e| %>
+                <%= e.hidden_field :user_id, value: @user.id %>
+              <% end %>
+              <%= f.submit "DMをはじめる", class:"btn btn-primary btn-lg user-show-chat" %>
+            <% end %>
+          <% end %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="row">
         <%= render "books/new", book: @book %>
       </div>
     </div>
