@@ -49,7 +49,8 @@
         <% unless user.id == current_user.id %>
           <% if (current_user.following? user) && (user.following? current_user) %>
           <% if is_room == true %>
-            <%= link_to 'DMを送る', room_path(room_id) %>
+            <p class="user-show-room"><a href="/rooms/<%= room_id %>" class="btn btn-primary btn-lg">DMを送る</a></p>
+
           <% else %>
             <%= form_for room do |f| %>
               <%= fields_for entry do |e| %>
