@@ -19,6 +19,9 @@ class User < ApplicationRecord
   #DM機能用
   has_many :entries, dependent: :destroy
   has_many :messages, dependent: :destroy
+  
+  #閲覧数
+  has_many :read_counts, dependent: :destroy
 
   validates :name, uniqueness: true, length: { in: 2..20 }
   validates :introduction, length: { maximum: 50 }

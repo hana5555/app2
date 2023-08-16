@@ -14,7 +14,7 @@ class RoomsController < ApplicationController
       @messages = @room.messages
       @message = Message.new
       @entries = @room.entries
-      @my_acount = current_user.id
+      @my_account = current_user.id
     else
       redirect_back(fallback_location: root_path)
     end
