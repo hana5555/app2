@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <% @entries.each do |e| %>
-      <% if @my_acount != e.user.id %>
+      <% if @my_account != e.user.id %>
         <h4><strong><%= e.user.name %>さんとのメッセージ</strong></h4>
       <% end %>
     <% end %>
@@ -14,7 +14,7 @@
     <table class="table table-hover">
     <% if @messages.present? %>
       <% @messages.each do |m| %>
-      <% @my_acount == m.user.id  %>
+
         <tr>
           <td><%= m.user.name %></td>
           <td><%= m.message %></td>
