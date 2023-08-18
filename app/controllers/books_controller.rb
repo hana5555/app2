@@ -26,6 +26,7 @@ class BooksController < ApplicationController
     @books = Book.find(params[:id])
     @user = @books.user
     @book_comment = BookComment.new
+    @room = Room.new
 
     @book_detail = Book.find(params[:id])
     unless ReadCount.find_by(user_id: current_user.id, book_id: @book_detail.id)
