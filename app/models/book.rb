@@ -9,8 +9,6 @@ class Book < ApplicationRecord
   has_many :week_favorites, -> { where(created_at: 1.week.ago.beginning_of_day..Time.current.end_of_day) }
   has_many :book_comments, dependent: :destroy
   
-  #閲覧数
-  has_many :read_counts, dependent: :destroy
 
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
