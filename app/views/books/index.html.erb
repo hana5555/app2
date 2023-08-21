@@ -1,7 +1,7 @@
 <div class="container">
   <%= render "layouts/errors", obj: @book %>
   <div class="row">
-    <div class="col-3">
+    <div class="col-3 col-sm-2">
       <div class="row">
         <%= render "users/user_info", user: current_user %>
       </div>
@@ -9,7 +9,7 @@
         <%= render "books/new", book: @book %>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-8">
       <h2>Books</h2>
       <table class="table table-hover table-inverse">
         <thead>
@@ -31,8 +31,8 @@
               <td id="favorite_buttons_<%= book.id %>">
                 <%= render "favorites/favorite", book: book %>
               </td>
-
               <td>コメント数：<%= book.book_comments.count %></td>
+              <td>閲覧数：<%= book.read_counts.count %></td>
             </tr>
           <% end %>
         </tbody>

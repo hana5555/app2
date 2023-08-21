@@ -15,6 +15,13 @@ class User < ApplicationRecord
   #フォロー画面一覧用
   has_many :following_users, through: :followers, source: :followed
   has_many :follower_users, through: :followeds, source: :follower
+  
+  #DM機能用
+  has_many :entries, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  
+  #閲覧数
+  has_many :read_counts, dependent: :destroy
 
   validates :name, uniqueness: true, length: { in: 2..20 }
   validates :introduction, length: { maximum: 50 }
