@@ -26,7 +26,7 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-  
+
   #フォロー一覧
   def follows
     user = User.find(params[:id])
