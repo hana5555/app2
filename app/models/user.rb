@@ -15,6 +15,9 @@ class User < ApplicationRecord
   #フォロー画面一覧用
   has_many :following_users, through: :followers, source: :followed
   has_many :follower_users, through: :followeds, source: :follower
+  
+  #グループ作成
+  has_many :group_users, dependent: :destroy
 
   validates :name, uniqueness: true, length: { in: 2..20 }
   validates :introduction, length: { maximum: 50 }
