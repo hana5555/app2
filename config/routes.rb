@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     end
       resource :relationships, only: [:create, :destroy]
   end
+  
   resources :books, only: [:new, :create, :index, :show, :edit, :update, :destroy] do
     resources :book_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
