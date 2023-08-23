@@ -139,8 +139,15 @@ ActiveRecord::Schema.define(version: 2023_08_21_105709) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "entries", "rooms"
   add_foreign_key "entries", "users"
+<<<<<<< HEAD
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
+=======
+
+  add_foreign_key "group_users", "groups"
+  add_foreign_key "group_users", "users"
+
+>>>>>>> 846ec31d240449efd5b0cdec9ab7fc23663f291b
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "rooms", "users"
